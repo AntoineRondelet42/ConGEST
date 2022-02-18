@@ -10,7 +10,6 @@ namespace ConGEST.Controllers
 {
     [ApiController]
     [Route("holliday")]
-
     public class HollidayController : Controller
     {
         private readonly IHollidayRepository _hollidayRepository;

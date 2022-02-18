@@ -11,8 +11,6 @@ namespace ConGEST.Repositories.Classes
     {
         public readonly CongestContext _context;
 
-        public object[] ServiceId { get; private set; }
-
         public ServiceRepository(CongestContext context)
         {
             _context = context;
@@ -28,6 +26,11 @@ namespace ConGEST.Repositories.Classes
             return _context.Service.ToList(); // select
         }
 
+        public Service GetServiceById(int serviceId)
+        {
+            return _context.Service.Find(serviceId);
+        }
+        
         public void DeleteService(int serviceId)
         {
             Service service = _context.Service.Find(serviceId);
