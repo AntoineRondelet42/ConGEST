@@ -19,7 +19,7 @@ namespace ConGEST.Extensions
                 {
                     setupAction.SwaggerDoc("ConGEST.APIOpenAPISpecification", new Microsoft.OpenApi.Models.OpenApiInfo()
                     {
-                        Title = "ConGEST.API",
+                        Title = "ConGEST",
                         Version = "0.1"
                     });
                     var xmlCommentsFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";

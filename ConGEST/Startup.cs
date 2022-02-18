@@ -16,6 +16,8 @@ using Microsoft.EntityFrameworkCore;
 using ConGEST.Settings;
 using ConGEST.Extensions;
 using ConGEST.Models;
+using ConGEST.Repositories.Interfaces;
+using ConGEST.Repositories.Classes;
 
 namespace ConGEST
 {
@@ -46,6 +48,8 @@ namespace ConGEST
             })
                 .AddEntityFrameworkStores<CongestContext>()
                 .AddDefaultTokenProviders();
+
+            services.AddScoped<IHollidayRepository, HollidayRepository>();
 
             services.AddCors(options =>
             {
