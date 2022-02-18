@@ -12,5 +12,6 @@ namespace ConGEST.Repositories.Interfaces
         void CreateHolliday(Holliday holliday);
         void DeleteHolliday(int hollidayId);
         void UpdateHolliday(int hollidayId, Holliday holliday);
+        Holliday GetHollidayById(int hollidayId);
     }
 }

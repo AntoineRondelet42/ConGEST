@@ -29,8 +29,25 @@ namespace ConGEST.Controllers
         [HttpPost]
         public ActionResult CreateHolliday(Holliday holliday)
         {
+            holliday.ValidStateId = 1;
+
             _hollidayRepository.CreateHolliday(holliday);
             return Ok();
+        }
+
+        [HttpPost("{hollidayId}/validate")]
+        public ActionResult ValidateHolliday(int hollidayId)
+        {
+            Holliday holliday = _hollidayRepository.GetHollidayById(hollidayId);
+
+            if(holliday == null)
+            {
+                return NotFound("La demande de congés n'existe pas.");
+            }
+
+            holliday.ValidStateId = 2;
+
+            return NoContent();
         }
 
         [HttpDelete("{hollidayId}")]

@@ -26,6 +26,11 @@ namespace ConGEST.Repositories.Classes
             return _context.Holliday.ToList(); // select
         }
 
+        public Holliday GetHollidayById(int hollidayId)
+        {
+            return _context.Holliday.Find(hollidayId);
+        }
+
         public void DeleteHolliday(int hollidayId)
         {
             Holliday holliday = _context.Holliday.Find(hollidayId);

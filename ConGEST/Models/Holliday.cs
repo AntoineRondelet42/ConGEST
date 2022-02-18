@@ -13,11 +13,8 @@ namespace ConGEST.CongestDbContext
         public int ValidStateId { get; set; }
         [ForeignKey("ValidStateId")]
         public ValidState ValidState { get; set; }
-        public int WorkerId { get; set; }
-        [ForeignKey("WorkerId")]
-        public Worker Worker { get; set; }
-
-
-
+        public Guid UserId { get; set; }
+        [ForeignKey("UserId")]
+        public User User { get; set; }
     }
 }

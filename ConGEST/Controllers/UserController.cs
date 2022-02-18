@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace ConGEST.Controllers
 {
     [ApiController]
-    [Route("worker")]
-    public class WorkerController
+    [Route("user")]
+    public class UserController
     {
 
     }
