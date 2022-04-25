@@ -1,9 +1,12 @@
 ﻿using ConGEST.CongestDbContext;
+using ConGEST.DTOs;
 using ConGEST.Repositories.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace ConGEST.Controllers
@@ -25,12 +28,19 @@ namespace ConGEST.Controllers
             return Ok(_hollidayRepository.GetHollidays());
         }
 
+        [Authorize]
         [HttpPost]
-        public ActionResult CreateHolliday(Holliday holliday)
+        public ActionResult CreateHolliday(HollidayDto holliday)
         {
-            holliday.ValidStateId = 1;
+            Holliday hollidayEntity = new Holliday();
 
-            _hollidayRepository.CreateHolliday(holliday);
+            hollidayEntity.DateAsk = DateTime.Now;
+            hollidayEntity.ValidStateId = 1;
+            hollidayEntity.DateBegin = holliday.DateBegin;
+            hollidayEntity.DateEnd = holliday.DateEnd;
+            hollidayEntity.UserId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+            _hollidayRepository.CreateHolliday(hollidayEntity);
             return Ok();
         }
 
