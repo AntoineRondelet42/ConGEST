@@ -21,6 +21,11 @@ namespace ConGEST.Repositories.Classes
             _context.SaveChanges(); //envoie la requête
         }
 
+        public IEnumerable<Holliday> GetHollidaysForUser(Guid userId)
+        {
+            return _context.Holliday.Where(h => h.UserId == userId);
+        }
+
         public IEnumerable<Holliday> GetHollidays()
         {
             return _context.Holliday.ToList(); // select

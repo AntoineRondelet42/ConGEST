@@ -13,8 +13,6 @@ C:\Users\a.rondelet\source\repos\ConGEST\ConGEST\obj\Debug\netcoreapp3.1\ConGEST
 C:\Users\a.rondelet\source\repos\ConGEST\ConGEST\obj\Debug\netcoreapp3.1\ConGEST.csproj.CoreCompileInputs.cache
 C:\Users\a.rondelet\source\repos\ConGEST\ConGEST\obj\Debug\netcoreapp3.1\ConGEST.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\a.rondelet\source\repos\ConGEST\ConGEST\obj\Debug\netcoreapp3.1\staticwebassets\ConGEST.StaticWebAssets.Manifest.cache
-C:\Users\a.rondelet\source\repos\ConGEST\ConGEST\obj\Debug\netcoreapp3.1\staticwebassets\ConGEST.StaticWebAssets.xml
-C:\Users\a.rondelet\source\repos\ConGEST\ConGEST\obj\Debug\netcoreapp3.1\scopedcss\bundle\ConGEST.styles.css
 C:\Users\a.rondelet\source\repos\ConGEST\ConGEST\obj\Debug\netcoreapp3.1\ConGEST.RazorTargetAssemblyInfo.cache
 C:\Users\a.rondelet\source\repos\ConGEST\ConGEST\obj\Debug\netcoreapp3.1\ConGEST.dll
 C:\Users\a.rondelet\source\repos\ConGEST\ConGEST\obj\Debug\netcoreapp3.1\ConGEST.pdb

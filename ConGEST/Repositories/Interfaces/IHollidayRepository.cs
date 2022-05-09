@@ -12,6 +12,7 @@ namespace ConGEST.Repositories.Interfaces
         void CreateHolliday(Holliday holliday);
         void DeleteHolliday(int hollidayId);
         void UpdateHolliday(int hollidayId, Holliday holliday);
+        IEnumerable<Holliday> GetHollidaysForUser(Guid userId);
         Holliday GetHollidayById(int hollidayId);
     }
 }

@@ -1,5 +1,5 @@
 ﻿using ConGEST.CongestDbContext;
-using ConGEST.DTOs;
+using ConGEST.DTOs.Holliday;
 using ConGEST.Repositories.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -22,15 +22,23 @@ namespace ConGEST.Controllers
             _hollidayRepository = hollidayRepository;
         }
 
+        //[Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult<IEnumerable<Holliday>> GetAllHollidays()
         {
             return Ok(_hollidayRepository.GetHollidays());
         }
 
-        [Authorize]
+        //[Authorize]
+        [HttpGet("user")]
+        public ActionResult<IEnumerable<Holliday>> GetAllHollidaysForUser()
+        {
+            return Ok(_hollidayRepository.GetHollidaysForUser(Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier))));
+        }
+
+        //[Authorize]
         [HttpPost]
-        public ActionResult CreateHolliday(HollidayDto holliday)
+        public ActionResult CreateHolliday(CreateHollidayDto holliday)
         {
             Holliday hollidayEntity = new Holliday();
 
@@ -44,6 +52,7 @@ namespace ConGEST.Controllers
             return Ok();
         }
 
+        //[Authorize (Roles = "Admin", "Manager", "RH")]
         [HttpPost("{hollidayId}/validate")]
         public ActionResult ValidateHolliday(int hollidayId)
         {
@@ -55,6 +64,26 @@ namespace ConGEST.Controllers
             }
 
             holliday.ValidStateId = 2;
+
+            _hollidayRepository.UpdateHolliday(holliday.HollidayId, holliday);
+
+            return NoContent();
+        }
+
+        //[Authorize (Roles = "Admin", "Manager", "RH")]
+        [HttpPost("{hollidayId}/refuse")]
+        public ActionResult RefuseHolliday(int hollidayId)
+        {
+            Holliday holliday = _hollidayRepository.GetHollidayById(hollidayId);
+
+            if (holliday == null)
+            {
+                return NotFound("La demande de congés n'existe pas.");
+            }
+
+            holliday.ValidStateId = 3;
+
+            _hollidayRepository.UpdateHolliday(holliday.HollidayId, holliday);
 
             return NoContent();
         }
