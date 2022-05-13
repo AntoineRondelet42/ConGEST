@@ -8938,23 +8938,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\a.rondelet\\.nuget\\packages\\": {},
+    "C:\\Users\\antoi\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\a.rondelet\\source\\repos\\ConGEST\\ConGEST\\ConGEST.csproj",
+      "projectUniqueName": "C:\\Users\\antoi\\OneDrive\\GitHub\\ConGEST\\ConGEST\\ConGEST.csproj",
       "projectName": "ConGEST",
-      "projectPath": "C:\\Users\\a.rondelet\\source\\repos\\ConGEST\\ConGEST\\ConGEST.csproj",
-      "packagesPath": "C:\\Users\\a.rondelet\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\a.rondelet\\source\\repos\\ConGEST\\ConGEST\\obj\\",
+      "projectPath": "C:\\Users\\antoi\\OneDrive\\GitHub\\ConGEST\\ConGEST\\ConGEST.csproj",
+      "packagesPath": "C:\\Users\\antoi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\antoi\\OneDrive\\GitHub\\ConGEST\\ConGEST\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\a.rondelet\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\antoi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
