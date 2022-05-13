@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'congest-api'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3A966560037848AE8FFAA2B91ACF7C92 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5E403B8D71D04F1CA4C03D80CB4B1628 }}
           package: .
