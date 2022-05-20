@@ -10,12 +10,11 @@ namespace ConGEST.DTOs.Holliday
         public DateTime DateBegin { get; set; }
         public DateTime DateEnd { get; set; }
         public int ValidStateId { get; set; }
-        public ValidState ValidState { get; set; }
         public int NumberOfWorkingDays { get; set; }
 
         public void CalculateWorkingDays()
         {
-            int nbrJours = Convert.ToInt32(DateEnd - DateBegin);
+            int nbrJours = Convert.ToInt32((DateEnd - DateBegin).TotalDays);
             int dayofweek = GetDayOfWeekPosition(DateEnd);
             int reste = (nbrJours - dayofweek) / 7;
             NumberOfWorkingDays = nbrJours - (1 + reste) * 2;
