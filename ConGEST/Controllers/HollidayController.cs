@@ -1,4 +1,5 @@
-﻿using ConGEST.CongestDbContext;
+﻿using AutoMapper;
+using ConGEST.CongestDbContext;
 using ConGEST.DTOs.Holliday;
 using ConGEST.Repositories.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -16,10 +17,12 @@ namespace ConGEST.Controllers
     public class HollidayController : Controller
     {
         private readonly IHollidayRepository _hollidayRepository;
+        private readonly IMapper _mapper;
 
-        public HollidayController(IHollidayRepository hollidayRepository)
+        public HollidayController(IHollidayRepository hollidayRepository, IMapper mapper)
         {
             _hollidayRepository = hollidayRepository;
+            _mapper = mapper;
         }
 
         [Authorize(Roles = "Admin")]
@@ -31,9 +34,18 @@ namespace ConGEST.Controllers
 
         [Authorize]
         [HttpGet("user")]
-        public ActionResult<IEnumerable<Holliday>> GetAllHollidaysForUser()
+        public ActionResult<IEnumerable<HollidayDto>> GetAllHollidaysForUser()
         {
-            return Ok(_hollidayRepository.GetHollidaysForUser(Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier))));
+            IEnumerable<Holliday> hollidays = _hollidayRepository.GetHollidaysForUser(Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)));
+
+            IEnumerable<HollidayDto> mappedHollidays = _mapper.Map<IEnumerable<HollidayDto>>(hollidays);
+
+            foreach (var mappedHolliday in mappedHollidays)
+            {
+                mappedHolliday.CalculateWorkingDays();
+            }
+
+            return Ok(mappedHollidays);
         }
 
         [Authorize]
