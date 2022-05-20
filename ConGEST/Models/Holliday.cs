@@ -16,5 +16,6 @@ namespace ConGEST.CongestDbContext
         public Guid UserId { get; set; }
         [ForeignKey("UserId")]
         public User User { get; set; }
+
     }
 }

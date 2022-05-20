@@ -88,6 +88,7 @@ namespace ConGEST.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{hollidayId}")]
         public ActionResult DeleteHolliday(int hollidayId)
         {
@@ -96,6 +97,7 @@ namespace ConGEST.Controllers
             return Ok();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPut("{hollidayId}")]
         public ActionResult UpdateHolliday(int hollidayId, Holliday holliday)
         {
