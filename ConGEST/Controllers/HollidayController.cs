@@ -22,21 +22,21 @@ namespace ConGEST.Controllers
             _hollidayRepository = hollidayRepository;
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult<IEnumerable<Holliday>> GetAllHollidays()
         {
             return Ok(_hollidayRepository.GetHollidays());
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpGet("user")]
         public ActionResult<IEnumerable<Holliday>> GetAllHollidaysForUser()
         {
             return Ok(_hollidayRepository.GetHollidaysForUser(Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier))));
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpPost]
         public ActionResult CreateHolliday(CreateHollidayDto holliday)
         {
@@ -52,7 +52,7 @@ namespace ConGEST.Controllers
             return Ok();
         }
 
-        //[Authorize (Roles = "Admin", "Manager", "RH")]
+        [Authorize (Roles = "Admin,Manager,RH")]
         [HttpPost("{hollidayId}/validate")]
         public ActionResult ValidateHolliday(int hollidayId)
         {
@@ -70,7 +70,7 @@ namespace ConGEST.Controllers
             return NoContent();
         }
 
-        //[Authorize (Roles = "Admin", "Manager", "RH")]
+        [Authorize (Roles = "Admin,Manager,RH")]
         [HttpPost("{hollidayId}/refuse")]
         public ActionResult RefuseHolliday(int hollidayId)
         {
