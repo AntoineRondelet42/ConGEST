@@ -75,7 +75,8 @@ namespace ConGEST.Controllers
             return BadRequest("Mot de passe incorrect.");
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
+        [Authorize]
         [HttpPost("Roles")]
         public async Task<IActionResult> CreateRole([FromBody] string roleName)
         {
@@ -98,7 +99,8 @@ namespace ConGEST.Controllers
             return Problem(RoleResult.Errors.First().Description, null, 500);
         }
 
-        [Authorize(Roles ="Admin")]
+        //[Authorize(Roles ="Admin")]
+        [Authorize]
         [HttpPost("user/{userEmail}/role")]
         public async Task<IActionResult> AddUserToRole(string userEmail, [FromBody] string roleName)
         {
