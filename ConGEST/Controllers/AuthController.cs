@@ -76,7 +76,7 @@ namespace ConGEST.Controllers
         }
 
         //[Authorize(Roles = "Admin")]
-        [Authorize]
+        //[Authorize]
         [HttpPost("Roles")]
         public async Task<IActionResult> CreateRole([FromBody] string roleName)
         {
@@ -100,7 +100,7 @@ namespace ConGEST.Controllers
         }
 
         //[Authorize(Roles ="Admin")]
-        [Authorize]
+        //[Authorize]
         [HttpPost("user/{userEmail}/role")]
         public async Task<IActionResult> AddUserToRole(string userEmail, [FromBody] string roleName)
         {
@@ -117,7 +117,7 @@ namespace ConGEST.Controllers
         }
 
         //[Authorize(Roles = "Admin,TEST")]
-        [Authorize]
+        //[Authorize]
         [HttpGet("user")]
         public async Task<IActionResult> GetUsers()
         {
