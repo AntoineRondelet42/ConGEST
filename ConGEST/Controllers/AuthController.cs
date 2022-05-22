@@ -114,7 +114,8 @@ namespace ConGEST.Controllers
             return Problem(result.Errors.First().Description, null, 500);
         }
 
-        [Authorize(Roles = "Admin,TEST")]
+        //[Authorize(Roles = "Admin,TEST")]
+        [Authorize]
         [HttpGet("user")]
         public async Task<IActionResult> GetUsers()
         {
