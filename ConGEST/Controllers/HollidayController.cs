@@ -25,7 +25,7 @@ namespace ConGEST.Controllers
             _mapper = mapper;
         }
 
-        [Authorize(Roles = "Admin")]
+        //(Roles = "Admin")]
         [HttpGet]
         public ActionResult<IEnumerable<Holliday>> GetAllHollidays()
         {
@@ -101,7 +101,7 @@ namespace ConGEST.Controllers
             return NoContent();
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpDelete("{hollidayId}")]
         public ActionResult DeleteHolliday(int hollidayId)
         {
