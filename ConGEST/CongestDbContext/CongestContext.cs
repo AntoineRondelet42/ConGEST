@@ -30,12 +30,12 @@ namespace ConGEST.CongestDbContext
                 new ValidState
                 {
                     ValidStateId = 2,
-                    ValidStateLib = "Accepté"
+                    ValidStateLib = "Acceptée"
                 },
                 new ValidState
                 {
                     ValidStateId = 3,
-                    ValidStateLib = "Refusé"
+                    ValidStateLib = "Refusée"
                 }
             );
 

@@ -10,6 +10,7 @@ namespace ConGEST.CongestDbContext
         public DateTime DateAsk { get; set; }
         public DateTime DateBegin { get; set; }
         public DateTime DateEnd { get; set; }
+        public string Commentaire { get; set; }
         public int ValidStateId { get; set; }
         [ForeignKey("ValidStateId")]
         public ValidState ValidState { get; set; }

@@ -4,14 +4,16 @@ using ConGEST.CongestDbContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ConGEST.Migrations
 {
     [DbContext(typeof(CongestContext))]
-    partial class CongestContextModelSnapshot : ModelSnapshot
+    [Migration("20220607095117_AjoutCommentaire")]
+    partial class AjoutCommentaire
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

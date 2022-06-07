@@ -9,5 +9,6 @@ namespace ConGEST.DTOs.Holliday
     {
         public DateTime DateBegin { get; set; }
         public DateTime DateEnd { get; set; }
+        public string Commentaire { get; set; }
     }
 }

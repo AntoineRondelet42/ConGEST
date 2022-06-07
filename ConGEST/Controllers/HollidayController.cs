@@ -58,6 +58,7 @@ namespace ConGEST.Controllers
             hollidayEntity.ValidStateId = 1;
             hollidayEntity.DateBegin = holliday.DateBegin;
             hollidayEntity.DateEnd = holliday.DateEnd;
+            hollidayEntity.Commentaire = holliday.Commentaire;
             hollidayEntity.UserId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
 
             _hollidayRepository.CreateHolliday(hollidayEntity);

@@ -9,6 +9,7 @@ namespace ConGEST.DTOs.Holliday
         public DateTime DateAsk { get; set; }
         public DateTime DateBegin { get; set; }
         public DateTime DateEnd { get; set; }
+        public string Commentaire { get; set; }
         public int ValidStateId { get; set; }
         public int NumberOfWorkingDays { get; set; }
 
